@@ -1709,10 +1709,16 @@ var styles = {
   }
 };
 
+var randomString = function randomString() {
+  return Math.random().toString(36).replace(/[^a-z]+/g, "");
+};
+
 var KnockoutText = function KnockoutText(_ref) {
   var text = _ref.text,
       _ref$style = _ref.style,
       style = _ref$style === undefined ? {} : _ref$style;
+
+  var maskId = randomString();
   return _react2.default.createElement(
     "div",
     { style: styles.container },
@@ -1725,11 +1731,11 @@ var KnockoutText = function KnockoutText(_ref) {
         y: "0",
         width: "100%",
         height: "100%",
-        mask: "url(#knockout-text)"
+        mask: "url(#" + maskId + ")"
       }),
       _react2.default.createElement(
         "mask",
-        { id: "knockout-text" },
+        { id: maskId },
         _react2.default.createElement("rect", { fill: "#fff", x: "0", y: "0", width: "100%", height: "100%" }),
         _react2.default.createElement(
           "text",
