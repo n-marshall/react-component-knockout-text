@@ -1721,12 +1721,13 @@ var KnockoutText = function KnockoutText(_ref) {
       style = _ref$style === undefined ? {} : _ref$style;
 
   var maskId = randomString();
+  var viewBox = "0 0 " + 25 * (style.xRatio || 4) + " 25";
   return _react2.default.createElement(
     "div",
     { style: _extends({}, styles.container, style) },
     _react2.default.createElement(
       "svg",
-      { style: styles.svg, viewBox: "0 0 125 25" },
+      { style: styles.svg, viewBox: viewBox },
       _react2.default.createElement("rect", {
         fill: style.backgroundColor || "rgba(0,0,0,0.6)",
         x: "0",

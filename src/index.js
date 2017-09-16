@@ -18,9 +18,10 @@ const randomString = () =>
 
 const KnockoutText = ({ text, style = {} }) => {
   const maskId = randomString();
+  const viewBox = `0 0 ${25 * (style.xRatio || 4)} 25`;
   return (
     <div style={{ ...styles.container, ...style }}>
-      <svg style={styles.svg} viewBox="0 0 125 25">
+      <svg style={styles.svg} viewBox={viewBox}>
         <rect
           fill={style.backgroundColor || "rgba(0,0,0,0.6)"}
           x="0"
